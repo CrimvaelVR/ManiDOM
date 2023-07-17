@@ -1,0 +1,65 @@
+/* Estilos para el contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    display: none;
+  }
+  
+  .titulo-gestor {
+    font-size: 6ch;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    display: none;
+    text-align: center;
+    color: white;
+    padding: 6vh;
+    display: none;
+    align-items: center;
+    background: linear-gradient(90deg, red, darkblue);
+    background-size: 200% 200%;
+    animation: gradient 3s ease-in-out infinite;
+  }
+  /* Estilo para pantallas pequeñas */
+  
+  
+  @media (max-width: 600px) {
+    .titulo-gestor {
+      font-size: 4vh;
+      padding: 3vh;
+      margin-top: 8vh;
+    }
+  }
+  
+  /* Estilo para pantallas medianas */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .titulo-gestor {
+      font-size: 5vh;
+      padding: 4vh;
+    }
+  }
+  
+  /* Estilo para pantallas grandes */
+  @media (min-width: 1024px) {
+    .titulo-gestor {
+      font-size: 6ch;
+      padding: 6vh;
+  
+    }
+  
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
