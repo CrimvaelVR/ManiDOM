@@ -50,6 +50,7 @@
       padding: 6vh;
   
     }
+  }
   
   
   @keyframes gradient {
@@ -61,5 +62,199 @@
     }
     100% {
       background-position: 0% 50%;
+    }
+  }
+
+  /* Estilos para la cabecera de la lista de estudiantes */
+.cabeza-estudiantes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007f5f;
+    color: #fff;
+    padding: 10px;  
+    border-radius: 5px;
+  }
+  
+  /* Estilos para la lista de estudiantes */
+  .student-list {
+    margin-top: 20px;
+  }
+  
+  /* Estilos para el modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+  }
+  
+  /* Estilos para el botón de cerrar del modal */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Estilos para los campos de entrada del formulario */
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  /* Estilos para las etiquetas de los campos de entrada del formulario */
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+  }
+  
+  /* Estilos para la lista de estudiantes */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Estilos para los elementos de la lista de estudiantes */
+  li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  
+  .button-group {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    margin-top: 10px;
+  }
+  
+  /* Estilos para los botones */
+  
+  button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #2ecc71;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #27ae60;
+  }
+  
+  /* Estilos para el diálogo de confirmación */
+  .dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: auto; /* para permitir el desplazamiento en caso de que el contenido sea demasiado grande para la pantalla */
+  }
+  
+  .dialog p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  
+  .dialog button {
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dialog button:hover {
+    background-color: #27ae60;
+  }
+  
+  .dialog .btn-ok {
+    background-color: #dc3545;
+  }
+  
+  .dialog .btn-ok:hover {
+    background-color: #c82333;
+  }
+  
+  @media (max-width: 600px) {
+    .student-info {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .student-info h3 {
+      margin-bottom: 0;
+    }
+    
+    .student-actions {
+      margin-top: 10px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .student-actions button:last-child {
+      margin-left: 10px;
+    }
+  
+    .dialog {
+      flex-direction: column;
+    }
+  
+    .dialog button {
+      margin-top: 1rem;
+      margin-left: 0;
     }
   }
