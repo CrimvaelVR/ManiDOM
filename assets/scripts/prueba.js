@@ -34,3 +34,28 @@ function saveStudent(name, surname, course, address, description) {
       successMessage.remove();
     }, 3000);
   }
+
+  // Función para cargar los datos de LocalStorage y mostrarlos en la página
+function loadStudents() {
+    let students = JSON.parse(localStorage.getItem("students")) || [];
+    studentUL.innerHTML = "";
+    students.forEach((student, index) => {
+      let li = document.createElement("li");
+      li.innerHTML = `
+      <div>
+        <span>${student.name} ${student.surname}</span>
+      </div>
+      <div class="button-group">
+        <button class="edit-btn" data-id="${index}">Editar</button>
+        <button class="delete-btn" data-id="${index}">Eliminar</button>
+        <button class="view-btn" data-id="${index}">Ver Datos</button>
+      </div>
+    </div>
+  
+        
+  
+      `;
+      studentUL.appendChild(li);
+    });
+  }
+  
