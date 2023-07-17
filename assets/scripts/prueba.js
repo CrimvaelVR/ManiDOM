@@ -141,3 +141,28 @@ function deleteStudent(index) {
       }
     });
   }
+
+  // Función para actualizar un estudiante
+function updateStudent(index, name, surname, course, address, description) {
+    let students = JSON.parse(localStorage.getItem("students")) || [];
+    students[index] = {
+      name: name,
+      surname: surname,
+      course: course,
+      address: address,
+      description: description,
+    };
+    localStorage.setItem("students", JSON.stringify(students));
+  
+    // Mostrar mensaje de éxito
+    const successMessage = document.createElement("div");
+    successMessage.textContent = "Editado exitosamente";
+    successMessage.classList.add("exito");
+    document.body.appendChild(successMessage);
+  
+    // Desvanecer el mensaje después de 3 segundos
+    setTimeout(() => {
+      successMessage.remove();
+    }, 3000);
+  }
+  
