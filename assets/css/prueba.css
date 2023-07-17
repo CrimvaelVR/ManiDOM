@@ -885,3 +885,117 @@
       margin-right: 40px;
     }
   }
+
+  /*Modo claro/oscuro NORMAL*/
+
+.oscuro{ 
+    background-color: #22254b; 
+    color: #f1eded; 
+  }
+  
+  .bt {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 99; 
+  }
+  
+  .btn-oscuro {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+  }
+  
+    .oscuro .cabeza-estudiantes {
+      background-color: #22254b;
+      color: #f1eded;
+    }
+    
+    .oscuro .student-list li {
+      background-color: #f1eded;
+      color: #22254b;
+    }
+    
+    .oscuro button {
+      background-color: #1d555b;
+      color: #f1eded;
+    }
+    
+    .oscuro .dialog {
+      background-color: rgba(34, 37, 75, 0.5);
+    }
+    
+    .oscuro .dialog p {
+      color: #f1eded;
+    }
+    
+    .oscuro .dialog button {
+      background-color: #22254b;
+      color: #f1eded;
+    }
+    
+    .oscuro .dialog .btn-ok {
+      background-color: #dc3545;
+    }
+    
+    .oscuro .dialog .btn-ok:hover {
+      background-color: #c82333;
+    }
+  
+    .oscuro .modal {
+      background-color: rgba(34, 37, 75, 0.5);
+    }
+    
+    .oscuro .modal-content {
+      background-color: #22254b;
+      color: #f1eded;
+      border-color: #f1eded;
+    }
+  
+    .oscuro .vista {
+    background-color: rgba(34, 37, 75, 0.5);
+  }
+  
+  .oscuro .vista .dialog-inner {
+    background-color: #22254b;
+    color: #f1eded;
+    box-shadow: 0 0 10px rgba(241, 237, 237, 0.3);
+  }
+  
+  .oscuro .vista .dialog-inner:before {
+    border-bottom-color: #22254b;
+  }
+  
+  .oscuro .vista .dialog-inner p {
+    color: #f1eded;
+  }
+  
+  .oscuro .vista .dialog-inner h2 {
+    color: #f1eded;
+  }
+  
+  .oscuro .vista .close-btn {
+    background-color: #1d555b;
+    color: #f1eded;
+  }
+  
+  .oscuro .vista .close-btn:hover {
+    background-color: #c82333;
+  }
+  
+  .fas {
+    font-size: 30px;
+  }
+  
+  /*RESPONSIVE DEL MODO CLARO/OSCURO*/
+  @media (max-width: 768px) {
+    .btn-oscuro {
+      padding: 5px;
+    }
+  
+    .fas {
+      font-size: 20px;
+    }
+  }
