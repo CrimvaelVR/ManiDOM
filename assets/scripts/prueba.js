@@ -58,7 +58,7 @@ function loadStudents() {
       studentUL.appendChild(li);
     });
   }
-  
+
   // Función para agregar un estudiante
 function addStudent() {
     modalTitle.innerHTML= "Agregar estudiante";
@@ -81,4 +81,17 @@ function addStudent() {
   setTimeout(() => {
     message.remove();
   }, 3000);
-  
+
+  // Función para editar un estudiante
+function editStudent(index) {
+    let students = JSON.parse(localStorage.getItem("students")) || [];
+    let student = students[index];
+    modalTitle.innerHTML = "Editar estudiante";
+    nameInput.value = student.name;
+    surnameInput.value = student.surname;
+    courseInput.value = student.course;
+    addressInput.value = student.address;
+    descriptionInput.value = student.description;
+    saveBtn.setAttribute("data-id", index);
+    modal.style.display = "block";
+  }
