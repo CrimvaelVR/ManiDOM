@@ -165,4 +165,19 @@ function updateStudent(index, name, surname, course, address, description) {
       successMessage.remove();
     }, 3000);
   }
+
+  // Evento para mostrar el modal al hacer clic en el botón agregar
+addBtn.addEventListener("click", addStudent);
+
+// Evento para cerrar el modal al hacer clic en el botón cancelar o fuera del modal
+window.addEventListener("click", (event) => {
+  if (event.target == cancelBtn) {
+    modal.style.display = "none";
+  }
+});
+
+let closeBtn = document.querySelector(".close");
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
   
