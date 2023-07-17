@@ -59,3 +59,26 @@ function loadStudents() {
     });
   }
   
+  // Función para agregar un estudiante
+function addStudent() {
+    modalTitle.innerHTML= "Agregar estudiante";
+    nameInput.value = "";
+    surnameInput.value = "";
+    courseInput.value = "";
+    addressInput.value = "";
+    descriptionInput.value = "";
+    saveBtn.removeAttribute("data-id");
+    modal.style.display = "block";
+    
+  }
+  
+  const message = document.createElement("div");
+  message.classList.add("message");
+  message.textContent = "Agregado exitosamente";
+  document.body.appendChild(message);
+  
+  // Ocultar el mensaje después de unos segundos
+  setTimeout(() => {
+    message.remove();
+  }, 3000);
+  
