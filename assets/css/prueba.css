@@ -999,3 +999,47 @@
       font-size: 20px;
     }
   }
+
+  .fondo-servicios {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/images/uvmesto.jpeg"); 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .slide-out {
+    transform: translateX(100%);
+    transition: transform 0.5s ease-out;
+  }
+  
+  a.leer-mas {
+    background-color: #88c426;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: 0.2s;
+  }
+  
+  a.leer-mas:hover {
+    transform: scale(1.1);
+    background-color: #860000
+  }
+  
+  
+  .exito{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 5px;
+    opacity: 0.9;
+    z-index: 9999;
+    transition: opacity 0.5s ease-in-out;
+  }
