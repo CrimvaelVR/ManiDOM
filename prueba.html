@@ -87,4 +87,48 @@
         </ul>
         <a href="https://uvm.edu.ve/noticias-uvm/" class="cta">Ver todas las noticias</a>
       </section>
-    
+      
+      <main>
+        <h1 class="titulo-gestor">Gestor de Estudiantes</h1>
+        <div class="container">
+          <div class="cabeza-estudiantes">
+            <h1>Lista de estudiantes</h1>
+            <button id="add-btn">Agregar</button>
+          </div>
+          <div class="student-list">
+            <ul id="student-ul"></ul>
+          </div>
+        </div>
+        <div class="modal" id="modal">
+          <div class="modal-content">
+            <h2 id="modal-title">Agregar estudiante</h2>
+            <span class="close">&times;</span>
+            <form>
+              <div>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" placeholder="Nombre" required>
+              </div>
+              <div>
+                <label for="surname">Apellido:</label>
+                <input type="text" id="surname" placeholder="Apellido" required>
+              </div>
+              <div>
+                <label for="course">Curso:</label>
+                <input type="text" id="course" placeholder="Curso" required>
+              </div>
+              <div>
+                <label for="address">Dirección:</label>
+                <input type="text" id="address" placeholder="Dirección" required>
+              </div>
+              <div>
+                <label for="description">Descripción:</label>
+                <textarea id="description" placeholder="Descripción"></textarea>
+              </div>
+              <div>
+                <button type="submit" id="save-btn">Guardar</button>
+                <button type="button" id="cancel-btn">Cancelar</button>
+                <!-- Agregar el botón "Ver" -->
+              </div>
+            </form>
+          </div>
+        </div>
