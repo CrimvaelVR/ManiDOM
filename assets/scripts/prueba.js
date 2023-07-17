@@ -181,3 +181,89 @@ closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
 });
   
+
+// Agregar un oyente para el evento 'submit' del formulario de estudiante
+const studentForm = document.querySelector('#modal form');
+studentForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  
+  // Obtener los valores de entrada del formulario
+  const name = nameInput.value.trim();
+  const surname = surnameInput.value.trim();
+  const course = courseInput.value.trim();
+  const address = addressInput.value.trim();
+  const description = descriptionInput.value.trim();
+  
+  // Validar que los campos de entrada no estén vacíos
+  if (name === '' || surname === '' || course === '' || address === '') {
+    alert('Por favor, complete todos los campos obligatorios.');
+    return;
+  }
+  
+  // Validar que el campo de descripción no tenga más de 500 caracteres
+  if (description.length > 500) {
+    alert('La descripción no debe contener más de 500 caracteres.');
+    return;
+  }
+  
+  // Obtener el índice del estudiante actualmente editado, si lo hay
+  const index = saveBtn.getAttribute("data-id");
+  
+  // Guardar o actualizar el estudiante según corresponda
+  if (index) {
+    updateStudent(index, name, surname, course, address, description);
+  } else {
+    saveStudent(name, surname, course, address, description);
+  }
+  
+  // Actualizar la lista de estudiantes y cerrar elmodal
+  loadStudents();
+  modal.style.display = "none";
+});
+
+// Agregar oyentes para los botones de editar y eliminar estudiantes
+studentUL.addEventListener("click", (event) => {
+  if (event.target.classList.contains("edit-btn")) {
+    const index = event.target.getAttribute("data-id");
+    editStudent(index);
+  } else if (event.target.classList.contains("delete-btn")) {
+    const index = event.target.getAttribute("data-id");
+    deleteStudent(index);
+  }
+});
+
+
+// Agregar oyente para el botón "Ver Datos"
+studentUL.addEventListener("click", (event) => {
+  if (event.target.classList.contains("view-btn")) {
+    const index = event.target.getAttribute("data-id");
+    const students = JSON.parse(localStorage.getItem("students")) || [];
+    const student = students[index];
+    
+    // Crear un cuadro de diálogo para mostrar los detalles del estudiante
+    const dialog = document.createElement("div");
+    dialog.classList.add("vista");
+    dialog.innerHTML = `
+      <div class="dialog-inner">
+        <p><strong>Nombre:</strong> ${student.name}</p>
+        <p><strong>Apellido:</strong> ${student.surname}</p>
+        <p><strong>Curso:</strong> ${student.course}</p>
+        <p><strong>Dirección:</strong> ${student.address}</p>
+        <p><strong>Descripción:</strong> ${student.description}</p>
+        <button class="close-btn">Cerrar</button>
+      </div>
+    `;
+    
+    // Agregar el cuadro de diálogo al DOM
+    document.body.appendChild(dialog);
+    
+    // Agregar un oyente para el botón "Cerrar" dentro del cuadro de diálogo
+    const closeBtn = dialog.querySelector(".close-btn");
+    closeBtn.addEventListener("click", () => {
+      dialog.remove();
+    });
+  }
+});
+
+// Cargar los estudiantes al cargar la página
+loadStudents();
